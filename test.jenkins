@@ -13,7 +13,7 @@ pipeline {
         }
         stage ('Test 2'){
             steps {
-                sh 'python DQ_module4_halaveika.py'
+                sh 'python3 DQ_module4_halaveika.py'
             }
         }
     }
