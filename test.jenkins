@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Test') {
+        stage('Test 1') {
             steps {
                 echo 'Hello World ...'
             }
@@ -11,12 +11,7 @@ pipeline {
                 git changelog: false, poll: false, url: 'https://github.com/...git'
             }
         }
-        stage('build') {
-            steps {
-                sh 'pip install -r requirements.txt'
-            }
-        }
-        stage ('Test'){
+        stage ('Test 2'){
             steps {
                 sh 'python DQ_module4_halaveika.py'
             }
