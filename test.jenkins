@@ -25,7 +25,7 @@ stages {
 }
     stage ('Test'){
         steps {
-            sh 'python unit-test.py'
+            sh 'python DQ_module4_halaveika.py'
         }
     }
 }
