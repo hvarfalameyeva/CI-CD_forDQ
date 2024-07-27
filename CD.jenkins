@@ -1,1 +1,20 @@
+pipeline {
+    agent any
 
+    stages {
+        stage('Checkout') {
+            steps {
+                // Получить код из вашего репозитория GitHub
+                git branch: 'addtest/validation_hr.department', url: 'https://github.com/hvarfalameyeva/CI-CD_forDQ'
+            }
+        }
+
+        stage('Merge to main branch') {
+            steps {
+                sh 'git checkout main'
+                sh 'git merge addtest/validation_hr.department'
+                sh 'git push origin main'
+            }
+        }
+    }
+}
