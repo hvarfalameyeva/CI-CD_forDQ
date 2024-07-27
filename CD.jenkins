@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Получить код из вашего репозитория GitHub
                 git branch: 'addtest/validation_hr.department', url: 'https://github.com/hvarfalameyeva/CI-CD_forDQ'
             }
         }
