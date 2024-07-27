@@ -33,6 +33,14 @@ def test_no_null_primary_key(db_connection):
     assert result[0] == expected_count, f"Expected {expected_count} but got {result[0]}"
 
 
+# Validate hr.employees does not contain NULL values in primary key column
+def test_no_null_primary_key(db_connection):
+    query = "SELECT COUNT(*) FROM  hr.employees WHERE employee_id IS NULL"
+    result = get_data(query, db_connection)
+    expected_count = 0
+    assert result[0] == expected_count, f"Expected {expected_count} but got {result[0]}"
+
+
 # Validate hr.departments does not contain duplicates in primary key column
 def test_no_duplicate_primary_key(db_connection):
     query = "SELECT department_id, COUNT(*) FROM hr.departments GROUP BY department_id HAVING COUNT(*) > 1"
