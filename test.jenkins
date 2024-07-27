@@ -5,12 +5,14 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main', changelog: false, poll: false, url: 'https://github.com/hvarfalameyeva/CI-CD_forDQ'
+                echo 'Checkout stage completed'
             }
         }
 
         stage('Run tests') {
             steps {
                 sh 'python3 -m DQ_module4_halaveika.py'
+                echo 'Run tests stage completed'
             }
         }
     }
