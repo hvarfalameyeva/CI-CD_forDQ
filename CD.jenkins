@@ -8,7 +8,7 @@ pipeline {
             }
         }
 
- stage('Merge to main branch') {
+     stage('Merge to main branch') {
             steps {
                 sh 'git checkout main'
                 sh 'git merge addtest/validation_hr.department'
