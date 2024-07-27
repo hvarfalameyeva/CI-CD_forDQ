@@ -14,6 +14,7 @@ pipeline {
                 sh 'git merge addtest/validation_hr.department'
                 withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
                     sh 'git push https://${GITHUB_TOKEN}@github.com/hvarfalameyeva/CI-CD_forDQ.git main'
+                }
             }
         }
     }
