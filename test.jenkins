@@ -1,19 +1,16 @@
 pipeline {
     agent any
+
     stages {
-        stage('Test 1') {
+        stage('Checkout') {
             steps {
-                echo 'Hello World ...'
+                git 'https://github.com/your-username/your-repo.git'
             }
         }
-        stage ('GIT Checkout'){
+
+        stage('Run tests') {
             steps {
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/hvarfalameyeva/CI-CD_forDQ'
-            }
-        }
-        stage ('Test 2'){
-            steps {
-                sh '''python3 -m venv env'''
+                sh 'python3 -m DQ_module4_halaveika.py'
             }
         }
     }
